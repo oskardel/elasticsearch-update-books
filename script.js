@@ -16,7 +16,6 @@ searchButton.addEventListener("click", function () {
         return response.json()
     })
     .then(data => {
-        console.log(data)
         if(data.hits.total.value <= 0){
             cardData.innerHTML += "<div>Your search did not match any documents</div>"
         }
@@ -28,6 +27,11 @@ searchButton.addEventListener("click", function () {
             <input type="text" id="book-publisher" value="${data.hits.hits[0]._source["Publisher"]}">
             <label for="year-publication">Publication year</label>
             <input type="number" id="year-publication" value="${data.hits.hits[0]._source["Year-Of-Publication"]}">
+            <button type="button" id="update-button">Update</button>
             `
+
+            document.getElementById("update-button").addEventListener("click", function() {
+                console.log("update")
+            })
     })
 })
