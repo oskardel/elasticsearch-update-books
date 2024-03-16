@@ -1,4 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #007bff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header img {
+    width: 200px;
+}
+
+.search-div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#form-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #00448d;
+    cursor: pointer;
+}
+
 #card-data {
     display: flex;
+    justify-content: center;
+    align-items: center; /* Center horizontally and vertically */
+    flex-direction: column; /* Align elements in a column */
+    margin-top: 20px;
+}
+
+.book-information {
+    display: flex;
     flex-direction: row;
+    align-items: center; /* Center horizontally */
+    margin-bottom: 20px; /* Add distance between book information and button */
+}
+
+.card-info {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px; /* Add padding to the card-info */
+    margin-right: 20px;
+    max-width: 500px;
+}
+
+.card-info label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card-info input[type="text"],
+.card-info input[type="number"] {
+    width: calc(100% - 22px); /* Adjust width to account for padding and borders */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-image {
+    margin-bottom: 20px;
+}
+
+.card-image img {
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px;
 }

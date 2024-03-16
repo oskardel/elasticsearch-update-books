@@ -1,5 +1,3 @@
-//CHANGE IP IN URL
-// ADD PAGINATION (MAYBE)
 URL = "http://localhost:9200/books_data/_search"
 URL_UPDATE = "http://localhosts:9200/books_data/_doc/"
 const formDiv = document.getElementById("form-div")
@@ -22,8 +20,9 @@ searchButton.addEventListener("click", function () {
             if (data.hits.total.value <= 0) {
                 cardData.innerHTML += "<div>Your search did not match any documents</div>"
             }
-            cardData.innerHTML += `<div class="card-info">
-		    <label for="book-title">Title</label>
+            cardData.innerHTML += `<div class="book-information">
+                <div class="card-info">
+		        <label for="book-title">Title</label>
                 <input type="text" id="book-title" value="${data.hits.hits[0]._source["Book-Title"]}">
                 <label for="book-author">Author</label>
                 <input type="text" id="book-author" value="${data.hits.hits[0]._source["Book-Author"]}">
@@ -37,6 +36,7 @@ searchButton.addEventListener("click", function () {
  		    <div class="card-image">
 		        <img src="${data.hits.hits[0]._source["Image-URL-L"]}" alt="${data.hits.hits[0]._source["Book-Title"]}" id="book-img" style="background:url(https://st.depositphotos.com/1987177/3470/v/600/depositphotos_34700099-stock-illustration-no-photo-available-or-missing.jpg)">
 		    </div>
+            </div>
             <button type="button" id="update-button">Update</button>`
 
             bookId = data.hits.hits[0]._id
